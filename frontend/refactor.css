@@ -1,0 +1,509 @@
+/* --- Import Modern Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+/* --- Global & Theme Setup (White Body) --- */
+:root {
+    --bg-color: #ffffff;
+    --bg-secondary: #f9f9f9;
+    --text-color: #111111; /* Dark Black for readability (000000 is too harsh) */
+    --text-muted: #555555;
+    --border-color: #eeeeee;
+    --header-footer-bg: #000000;
+    --header-footer-text: #ffffff;
+    --cta-bg: #000000;
+    --cta-text: #ffffff;
+    --cta-hover: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    /* SET GLOBAL TEXT COLOR TO BLACK/--text-color */
+    color: var(--text-color); 
+    line-height: 1.6;
+    /* ADJUSTED: Increased padding-top for new taller header */
+    padding-top: 130px; 
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h2.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--cta-bg);
+    margin: 1rem auto 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    /* Ensure all P tags use the black color set on the body */
+    color: var(--text-color); 
+}
+
+a {
+    color: var(--cta-bg);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* --- REVISED Header & Navigation --- */
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ADJUSTED: Increased vertical padding (15px -> 25px) to increase height */
+    padding: 25px 50px; 
+    background-color: var(--header-footer-bg);
+    border-bottom: 1px solid #333;
+    position: fixed; 
+    top: 0;
+    left: 0;      
+    width: 100%;  
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    max-height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-size: 1.6rem; 
+    font-weight: 700;
+    color: var(--header-footer-text);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    /* margin-left removed */
+}
+
+.main-nav a {
+    color: var(--header-footer-text);
+    font-weight: 500;
+    font-size: 1rem; 
+    margin: 0 15px; 
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    text-decoration: none; 
+}
+
+.main-nav a:hover {
+    color: #aaaaaa;
+    text-decoration: underline; 
+}
+
+/* --- Hero Section --- */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 60px 20px; 
+    background-color: var(--bg-color);
+}
+
+#hero .container {
+    max-width: 800px;
+}
+
+#hero h1 {
+    color: #000000; 
+}
+
+#hero .sub-headline {
+    font-size: 1.4rem;
+    color: #000000; 
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+}
+
+/* Hero CTA Button (from kyoconnectai.com) */
+#hero button {
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 1.1rem; 
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+#hero button:hover {
+    background-color: var(--cta-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Supported Models Section (Moved Up) --- */
+/* Styles for #supported-models are already correctly using var(--text-color) or inheriting from body */
+
+/* --- REVISED Mission Section --- */
+#mission {
+    background-color: var(--bg-secondary);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 0 auto;
+    /* padding: 0 20px removed to maximize width */
+}
+
+.mission-grid .text {
+    text-align: left;
+}
+
+.mission-grid .text h2 {
+    text-align: left; 
+    margin-bottom: 1.5rem;
+}
+
+.mission-grid .text h2::after {
+    margin: 1rem 0 0; 
+}
+
+.mission-grid p {
+    font-size: 1.1rem;
+    /* Removed redundant color setting, inherits black from body */
+    line-height: 1.7;
+}
+
+.mission-grid .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- Solutions Section --- */
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.solution-card {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.solution-card h3 {
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+/* --- Supported Models Section (Copied from kyoconnectai.com) --- */
+.section-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.section-split .text {
+    text-align: left;
+}
+
+.section-split .image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#supported-models .section-split h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#supported-models ul {
+    list-style: none;
+    padding-left: 0;
+    /* List item styles now rely on inherited black color */
+}
+
+#supported-models li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    /* Removed color: var(--text-muted); */
+}
+
+#supported-models li::before {
+    content: '✔'; /* Checkmark */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #007bff; /* A small accent color */
+    font-weight: bold;
+}
+
+/* --- Use Cases Section --- */
+#use-cases {
+    background-color: var(--bg-secondary);
+}
+
+/* Part 1: Chip/Tag layout */
+.use-case-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 4rem; 
+}
+
+.use-case-item-chip {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    padding: 12px 25px;
+    border-radius: 30px; 
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.use-case-item-chip:hover {
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    border-color: var(--cta-bg);
+    transform: translateY(-2px);
+}
+
+/* Part 2: Detailed Iframe Cases (from kyoconnectai.com) */
+.use-case-detailed {
+    margin-top: 3rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.use-case-detailed + .use-case-detailed {
+    margin-top: 2rem; 
+}
+
+.use-case-detailed .text {
+    padding: 30px;
+    background: var(--bg-color);
+}
+
+.use-case-detailed .text p {
+    font-size: 0.95rem;
+}
+
+.use-case-detailed .text strong {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.use-case-detailed .image {
+    width: 100%;
+    border-top: 1px solid var(--border-color);
+}
+
+.use-case-detailed iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    display: block;
+}
+
+
+/* --- Contact Section (Moved & Restyled) --- */
+#contact {
+    background-color: var(--bg-color);
+}
+
+#contact .container {
+    max-width: 700px;
+}
+
+#contact p {
+    text-align: center;
+    font-size: 1.1rem;
+    /* Removed color: var(--text-muted); */
+}
+
+/* Form styling from kyoconnectai.com */
+.form-container {
+    margin-top: 3rem;
+}
+
+.input-wrapper {
+    margin-bottom: 20px;
+}
+
+.input-wrapper label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    /* Form label color is now black */
+    color: var(--text-color); 
+}
+
+.input-wrapper input,
+.input-wrapper textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+    outline: none;
+    border-color: var(--cta-bg);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.sub-button {
+    width: 100%;
+    background-color: var(--cta-bg);
+    color: var(--cta-text);
+    padding: 14px 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.sub-button:hover {
+    background-color: var(--cta-hover);
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    /* ADJUSTED: Increased vertical padding (10px -> 25px) to increase height */
+    padding: 25px 20px;
+}
+
+/* FIX: Ensure the footer text is white, overriding the inherited body color */
+footer p {
+    color: var(--header-footer-text); 
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    section {
+        padding: 60px 20px;
+    }
+
+    .header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+
+    body {
+        padding-top: 150px; 
+    }
+
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    .main-nav ul {
+        padding: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .main-nav li {
+        margin: 5px 8px;
+    }
+
+    .mission-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    .section-split {
+        grid-template-columns: 1fr; 
+    }
+    .section-split:nth-child(even) .text {
+        grid-row: 2;
+    }
+    .section-split:nth-child(even) .image {
+        grid-row: 1;
+    }
+}
