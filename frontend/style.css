@@ -5,7 +5,7 @@
 :root {
     --bg-color: #ffffff;
     --bg-secondary: #f9f9f9;
-    --text-color: #111111;
+    --text-color: #111111; /* This is the desired dark black color */
     --text-muted: #555555;
     --border-color: #eeeeee;
     --header-footer-bg: #000000;
@@ -28,9 +28,9 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    /* Set ALL default body text to the dark black color */
+    color: var(--text-color); 
     line-height: 1.6;
-    /* ADJUSTED: Increased padding-top for new taller header */
     padding-top: 130px; 
 }
 
@@ -44,7 +44,7 @@ h1, h2, h3 {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--text-color); /* Already black */
 }
 
 h1 {
@@ -72,7 +72,8 @@ h3 {
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-muted); 
+    /* Explicitly set p to black/--text-color for robust inheritance over browser defaults */
+    color: var(--text-color); 
 }
 
 a {
@@ -87,11 +88,11 @@ section {
 
 /* --- REVISED Header & Navigation --- */
 
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* ADJUSTED: Increased vertical padding (15px -> 25px) to increase height */
     padding: 25px 50px; 
     background-color: var(--header-footer-bg);
     border-bottom: 1px solid #333;
@@ -101,7 +102,7 @@ section {
     width: 100%;  
     z-index: 1000;
 }
-
+/* ... Header styles (already use white or dark colors correctly) ... */
 .logo-container {
     display: flex;
     align-items: center;
@@ -159,12 +160,12 @@ section {
 }
 
 #hero h1 {
-    color: #000000; 
+    color: #000000; /* Pure black text */
 }
 
 #hero .sub-headline {
     font-size: 1.4rem;
-    color: #000000; 
+    color: #000000; /* Pure black text */
     font-weight: 300;
     margin-bottom: 2.5rem;
 }
@@ -199,7 +200,6 @@ section {
     gap: 40px;
     align-items: center;
     margin: 0 auto;
-    /* padding: 0 20px removed to maximize width */
 }
 
 .mission-grid .text {
@@ -217,7 +217,7 @@ section {
 
 .mission-grid p {
     font-size: 1.1rem;
-    color: var(--text-color);
+    /* Removed: color: var(--text-color); -> now inherits from the p rule/body */
     line-height: 1.7;
 }
 
@@ -288,7 +288,7 @@ section {
     padding-left: 30px;
     margin-bottom: 10px;
     font-size: 1.05rem;
-    color: var(--text-muted);
+    /* Removed: color: var(--text-muted); -> now inherits black from body */
 }
 
 #supported-models li::before {
@@ -301,6 +301,12 @@ section {
 }
 
 /* --- Use Cases Section --- */
+.use-case-detailed .text strong {
+    /* Removed: color: var(--text-color); -> now inherits black from body */
+    font-size: 1.1rem;
+}
+
+/* ... (other use-case styles unchanged) ... */
 #use-cases {
     background-color: var(--bg-secondary);
 }
@@ -384,7 +390,7 @@ section {
 #contact p {
     text-align: center;
     font-size: 1.1rem;
-    color: var(--text-muted);
+    /* Removed: color: var(--text-muted); -> now inherits black from body */
 }
 
 /* Form styling from kyoconnectai.com */
@@ -399,8 +405,8 @@ section {
 .input-wrapper label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-muted);
+    /* Form labels often use muted color, but enforcing black per request */
+    color: var(--text-color); 
 }
 
 .input-wrapper input,
@@ -443,17 +449,17 @@ footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-    /* ADJUSTED: Increased vertical padding (10px -> 25px) to increase height */
     padding: 25px 20px;
 }
 
-/* FIX: Override the general 'p' style for the footer to make it white */
+/* FIX: Override the general 'p' style for the footer to make it white (correct for dark footer) */
 footer p {
     color: var(--header-footer-text); 
 }
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
+    /* ... mobile styles unchanged ... */
     h1 {
         font-size: 2.5rem;
     }
@@ -469,9 +475,8 @@ footer p {
         padding: 15px 20px;
     }
 
-    /* Update: If the header is fixed and stacks on mobile, the padding needs to be adjusted here too, potentially higher than 125px */
     body {
-        padding-top: 150px; /* Increased for mobile stack height */
+        padding-top: 150px; 
     }
 
     .logo-container {
@@ -487,13 +492,12 @@ footer p {
     }
 
     .mission-grid {
-        grid-template-columns: 1fr; /* Stack mission on mobile */
+        grid-template-columns: 1fr; 
     }
 
     .section-split {
-        grid-template-columns: 1fr; /* Stack columns on mobile */
+        grid-template-columns: 1fr; 
     }
-    /* Reverse order on mobile to match visual flow */
     .section-split:nth-child(even) .text {
         grid-row: 2;
     }
