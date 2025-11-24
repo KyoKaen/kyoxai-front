@@ -30,8 +30,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    /* Add padding to body to prevent content from being hidden by fixed header */
-    padding-top: 100px; /* Adjust this value based on your header's height */
+    /* ADJUSTED: Increased padding-top for new taller header */
+    padding-top: 130px; 
 }
 
 .container {
@@ -87,18 +87,18 @@ section {
 
 /* --- REVISED Header & Navigation --- */
 
-
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 50px;
+    /* ADJUSTED: Increased vertical padding (15px -> 25px) to increase height */
+    padding: 25px 50px; 
     background-color: var(--header-footer-bg);
     border-bottom: 1px solid #333;
-    position: fixed; /* <-- CHANGED */
+    position: fixed; 
     top: 0;
-    left: 0;      /* <-- ADDED */
-    width: 100%;  /* <-- ADDED */
+    left: 0;      
+    width: 100%;  
     z-index: 1000;
 }
 
@@ -114,7 +114,7 @@ section {
 }
 
 .logo-text {
-    font-size: 1.6rem; /* Adjusted size */
+    font-size: 1.6rem; 
     font-weight: 700;
     color: var(--header-footer-text);
 }
@@ -131,16 +131,16 @@ section {
 .main-nav a {
     color: var(--header-footer-text);
     font-weight: 500;
-    font-size: 1rem; /* Increased font size */
-    margin: 0 15px; /* Use margin from kyoconnectai.com */
+    font-size: 1rem; 
+    margin: 0 15px; 
     padding: 5px 0;
     transition: color 0.3s ease;
-    text-decoration: none; /* Explicitly remove underline */
+    text-decoration: none; 
 }
 
 .main-nav a:hover {
     color: #aaaaaa;
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline; 
 }
 
 /* --- Hero Section --- */
@@ -150,7 +150,7 @@ section {
     justify-content: center;
     text-align: center;
     min-height: 80vh;
-    padding: 60px 20px; /* Use container's padding */
+    padding: 60px 20px; 
     background-color: var(--bg-color);
 }
 
@@ -159,12 +159,12 @@ section {
 }
 
 #hero h1 {
-    color: #000000; /* Pure black text as requested */
+    color: #000000; 
 }
 
 #hero .sub-headline {
     font-size: 1.4rem;
-    color: #000000; /* Pure black text as requested */
+    color: #000000; 
     font-weight: 300;
     margin-bottom: 2.5rem;
 }
@@ -175,7 +175,7 @@ section {
     color: var(--cta-text);
     padding: 14px 28px;
     font-weight: 700;
-    font-size: 1.1rem; /* Slightly larger */
+    font-size: 1.1rem; 
     border-radius: 5px;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -198,9 +198,8 @@ section {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
-    /* max-width removed to use full container width */
     margin: 0 auto;
-    /* REMOVED: padding: 0 20px; */ 
+    /* padding: 0 20px removed to maximize width */
 }
 
 .mission-grid .text {
@@ -208,12 +207,12 @@ section {
 }
 
 .mission-grid .text h2 {
-    text-align: left; /* Override default centered h2 */
+    text-align: left; 
     margin-bottom: 1.5rem;
 }
 
 .mission-grid .text h2::after {
-    margin: 1rem 0 0; /* Align a-f-t-e-r-e-l-e-m-e-n-t to the left */
+    margin: 1rem 0 0; 
 }
 
 .mission-grid p {
@@ -312,14 +311,14 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 4rem; /* Add space before the detailed cases */
+    margin-bottom: 4rem; 
 }
 
 .use-case-item-chip {
     background-color: var(--bg-color);
     border: 1px solid var(--border-color);
     padding: 12px 25px;
-    border-radius: 30px; /* Pill shape */
+    border-radius: 30px; 
     font-weight: 500;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -343,7 +342,7 @@ section {
 }
 
 .use-case-detailed + .use-case-detailed {
-    margin-top: 2rem; /* Space between each case */
+    margin-top: 2rem; 
 }
 
 .use-case-detailed .text {
@@ -444,7 +443,8 @@ footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
+    /* ADJUSTED: Increased vertical padding (10px -> 25px) to increase height */
+    padding: 25px 20px;
 }
 
 /* FIX: Override the general 'p' style for the footer to make it white */
@@ -469,9 +469,9 @@ footer p {
         padding: 15px 20px;
     }
 
-    /* Add padding-top for mobile fixed header */
+    /* Update: If the header is fixed and stacks on mobile, the padding needs to be adjusted here too, potentially higher than 125px */
     body {
-        padding-top: 125px;
+        padding-top: 150px; /* Increased for mobile stack height */
     }
 
     .logo-container {
