@@ -72,7 +72,7 @@ h3 {
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-muted); /* <-- This general 'p' rule is the source of the gray color */
+    color: var(--text-muted); 
 }
 
 a {
@@ -200,7 +200,7 @@ section {
     align-items: center;
     /* max-width removed to use full container width */
     margin: 0 auto;
-    padding: 0 20px;
+    /* REMOVED: padding: 0 20px; */ 
 }
 
 .mission-grid .text {
