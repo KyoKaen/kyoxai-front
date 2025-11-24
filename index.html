@@ -5,515 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kyox.ai</title>
     <link rel="icon" href="kyoconnectai_logo.jpg" type="image/jpeg"/>
-    <style>
-        /* --- Import Modern Font --- */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
-
-        /* --- Global & Theme Setup (White Body) --- */
-        :root {
-            --bg-color: #ffffff;
-            --bg-secondary: #f9f9f9;
-            --text-color: #111111;
-            --text-muted: #555555;
-            --border-color: #eeeeee;
-            --header-footer-bg: #000000;
-            --header-footer-text: #ffffff;
-            --cta-bg: #000000;
-            --cta-text: #ffffff;
-            --cta-hover: #333333;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            /* Add padding to body to prevent content from being hidden by fixed header */
-            padding-top: 100px; /* Adjust this value based on your header's height */
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1, h2, h3 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-
-        h1 {
-            font-size: 3.2rem;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        h2.section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--cta-bg);
-            margin: 1rem auto 0;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--text-muted);
-        }
-
-        a {
-            color: var(--cta-bg);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        /* --- REVISED Header & Navigation --- */
-
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 50px;
-            background-color: var(--header-footer-bg);
-            border-bottom: 1px solid #333;
-            position: fixed; /* <-- CHANGED */
-            top: 0;
-            left: 0;          /* <-- ADDED */
-            width: 100%;      /* <-- ADDED */
-            z-index: 1000;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo {
-            max-height: 40px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.6rem; /* Adjusted size */
-            font-weight: 700;
-            color: var(--header-footer-text);
-        }
-
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        .main-nav li {
-            /* margin-left removed */
-        }
-
-        .main-nav a {
-            color: var(--header-footer-text);
-            font-weight: 500;
-            font-size: 1rem; /* Increased font size */
-            margin: 0 15px; /* Use margin from kyoconnectai.com */
-            padding: 5px 0;
-            transition: color 0.3s ease;
-            text-decoration: none; /* Explicitly remove underline */
-        }
-
-        .main-nav a:hover {
-            color: #aaaaaa;
-            text-decoration: underline; /* Add underline on hover */
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            min-height: 80vh;
-            padding: 60px 20px; /* Use container's padding */
-            background-color: var(--bg-color);
-        }
-
-        #hero .container {
-            max-width: 800px;
-        }
-
-        #hero h1 {
-            color: #000000; /* Pure black text as requested */
-        }
-
-        #hero .sub-headline {
-            font-size: 1.4rem;
-            color: #000000; /* Pure black text as requested */
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Hero CTA Button (from kyoconnectai.com) */
-        #hero button {
-            background-color: var(--cta-bg);
-            color: var(--cta-text);
-            padding: 14px 28px;
-            font-weight: 700;
-            font-size: 1.1rem; /* Slightly larger */
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        #hero button:hover {
-            background-color: var(--cta-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* --- REVISED Mission Section --- */
-        #mission {
-            background-color: var(--bg-secondary);
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .mission-grid .text {
-            text-align: left;
-        }
-
-        .mission-grid .text h2 {
-            text-align: left; /* Override default centered h2 */
-            margin-bottom: 1.5rem;
-        }
-
-        .mission-grid .text h2::after {
-            margin: 1rem 0 0; /* Align a-f-t-e-r-e-l-e-m-e-n-t to the left */
-        }
-
-        .mission-grid p {
-            font-size: 1.1rem;
-            color: var(--text-color);
-            line-height: 1.7;
-        }
-
-        .mission-grid .image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        /* --- Solutions Section --- */
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .solution-card {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-
-        .solution-card h3 {
-            color: var(--text-color);
-            margin-bottom: 15px;
-        }
-
-        /* --- Supported Models Section (Copied from kyoconnectai.com) --- */
-        .section-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-split .text {
-            text-align: left;
-        }
-
-        .section-split .image img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        #supported-models .section-split h3 {
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        #supported-models ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        #supported-models li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-            color: var(--text-muted);
-        }
-
-        #supported-models li::before {
-            content: '✔'; /* Checkmark */
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #007bff; /* A small accent color */
-            font-weight: bold;
-        }
-
-        /* --- Use Cases Section --- */
-        #use-cases {
-            background-color: var(--bg-secondary);
-        }
-
-        /* Part 1: Chip/Tag layout */
-        .use-case-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 4rem; /* Add space before the detailed cases */
-        }
-
-        .use-case-item-chip {
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 12px 25px;
-            border-radius: 30px; /* Pill shape */
-            font-weight: 500;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .use-case-item-chip:hover {
-            background-color: var(--cta-bg);
-            color: var(--cta-text);
-            border-color: var(--cta-bg);
-            transform: translateY(-2px);
-        }
-
-        /* Part 2: Detailed Iframe Cases (from kyoconnectai.com) */
-        .use-case-detailed {
-            margin-top: 3rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        .use-case-detailed + .use-case-detailed {
-            margin-top: 2rem; /* Space between each case */
-        }
-
-        .use-case-detailed .text {
-            padding: 30px;
-            background: var(--bg-color);
-        }
-
-        .use-case-detailed .text p {
-            font-size: 0.95rem;
-        }
-
-        .use-case-detailed .text strong {
-            color: var(--text-color);
-            font-size: 1.1rem;
-        }
-
-        .use-case-detailed .image {
-            width: 100%;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .use-case-detailed iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-            display: block;
-        }
-
-
-
-
-        /* --- Contact Section (Moved & Restyled) --- */
-        #contact {
-            background-color: var(--bg-color);
-        }
-
-        #contact .container {
-            max-width: 700px;
-        }
-
-        #contact p {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-
-        /* Form styling from kyoconnectai.com */
-        .form-container {
-            margin-top: 3rem;
-        }
-
-        .input-wrapper {
-            margin-bottom: 20px;
-        }
-
-        .input-wrapper label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-muted);
-        }
-
-        .input-wrapper input,
-        .input-wrapper textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .input-wrapper input:focus,
-        .input-wrapper textarea:focus {
-            outline: none;
-            border-color: var(--cta-bg);
-            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .sub-button {
-            width: 100%;
-            background-color: var(--cta-bg);
-            color: var(--cta-text);
-            padding: 14px 28px;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .sub-button:hover {
-            background-color: var(--cta-hover);
-        }
-
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 10px 20px;
-        }
-
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-            section {
-                padding: 60px 20px;
-            }
-
-            .header {
-                flex-direction: column;
-                padding: 15px 20px;
-            }
-
-            /* Add padding-top for mobile fixed header */
-            body {
-                padding-top: 125px;
-            }
-
-            .logo-container {
-                margin-bottom: 15px;
-            }
-            .main-nav ul {
-                padding: 0;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            .main-nav li {
-                margin: 5px 8px;
-            }
-
-            .mission-grid {
-                grid-template-columns: 1fr; /* Stack mission on mobile */
-            }
-
-            .section-split {
-                grid-template-columns: 1fr; /* Stack columns on mobile */
-            }
-            /* Reverse order on mobile to match visual flow */
-            .section-split:nth-child(even) .text {
-                grid-row: 2;
-            }
-            .section-split:nth-child(even) .image {
-                grid-row: 1;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="frontend/style.css"> 
 </head>
 <body>
 
     <header class="header">
         <a href="#hero" class="logo-container">
             <img src="https://kyoconnectai.com/kyoconnectai_logo.jpg" alt="kyox.ai Logo" class="logo">
-            <span class="logo-text">kyox.ai (previous KyoConnectAI)</span>
+            <span class="logo-text">KyoX.ai (previous KyoConnectAI)</span>
         </a>
         <nav class="main-nav">
             <ul>
@@ -540,17 +39,18 @@
         </section>
 
         <section id="mission">
-            <div class="mission-grid">
-                <div class="text">
-                    <h2 class="section-title">Our Mission</h2>
-                    <p>
-                        SMBs are the backbone of the economy, but their most valuable expertise—their tacit knowledge—often remains unscalable.
-                        <br><br>
-                        Our mission is to digitize this expertise. We build specialized AI agents that act as domain experts, turning your institutional knowledge into a powerful, permanent digital asset.
-                    </p>
-                </div>
-                <div class="image">
-                    <img src="https://kyoconnectai.com/mission.jpg" alt="Our Mission">
+            <div class="container"> <div class="mission-grid">
+                    <div class="text">
+                        <h2 class="section-title">Our Mission</h2>
+                        <p>
+                            SMBs are the backbone of the economy, but their most valuable expertise—their tacit knowledge—often remains unscalable.
+                            <br><br>
+                            Our mission is to digitize this expertise. We build specialized AI agents that act as domain experts, turning your institutional knowledge into a powerful, permanent digital asset.
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="https://kyoconnectai.com/mission.jpg" alt="Our Mission">
+                    </div>
                 </div>
             </div>
         </section>
@@ -572,7 +72,7 @@
                     <div class="image">
                         <img src="https://kyoconnectai.com/chatgpt-deepseek-icon.jpg" alt="Functionality Overview">
                     </div>
-                     <div class="text">
+                    <div class="text">
                         <h3>Capabilities:</h3>
                         <ul>
                             <li><strong>Works Across Channels:</strong> Easily integrate with platforms like Slack, WhatsApp, Messenger, and web widgets.</li>
@@ -624,13 +124,13 @@
                 </div>
 
                 <div class="use-case-detailed">
-                    <!-- <div class="text"> -->
+                    <div class="text">
                         <p><strong>Case 1: 株式会社DJC </strong></p> <p> DJC Co., Ltd., specializes in the design, manufacturing, and sales of concrete formwork. 株式会社DJCは、東京都立川市に本社を構える、コンクリート製品用型枠の設計・製造・販売を中心とした会社です。 レーザー加工品や治工具の製造・販売、保守管理にも対応しています。</p>
                         <p>Visit 株式会社DJC demo: <a href="https://kyokaen.github.io/kyoconnectai-mock-usecase/DJC/djc.html" target="_blank">株式会社DJC</a></p>
-                    <!-- </div> -->
-                    <!-- <div class="image"> -->
+                    </div>
+                    <div class="image">
                         <iframe src="https://kyokaen.github.io/kyoconnectai-mock-usecase/DJC/djc.html"></iframe>
-                    <!-- </div> -->
+                    </div>
                 </div>
 
                 <div class="use-case-detailed">
@@ -697,25 +197,7 @@
         <p>&copy; 2025 kyox.ai. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let message = document.getElementById("message").value;
-
-            // This creates the Calendly link with pre-filled form fields
-            let calendlyUrl = "https://calendly.com/gorightgoleft?name=" + encodeURIComponent(name) + "&email=" + encodeURIComponent(email) + "&message=" + encodeURIComponent(message);
-
-            // Redirects the user to Calendly
-            window.location.href = calendlyUrl;
-        });
-    </script>
-
-    <script>
-        window.CHATBOT_API = 'https://kyoconnectai-hp-chatbot-1096582767898.europe-west1.run.app/chat';
-    </script>
+    <script src="frontend/script.js" defer></script>
     <script src="https://kyokaen.github.io/kyoconnectai-chatbot-js/kyoconnectai-response-format-test.js" defer></script>
 
 </body>
