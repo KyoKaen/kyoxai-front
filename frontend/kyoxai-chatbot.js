@@ -21,11 +21,11 @@ class KyoconnectaiHPChatbot {
       "How kyox.ai Can Help (FAQs with Answers)"
     ],
     COPY: {
-      header: "KyoConnectAI startup AI Agent",
+      header: "KyoX.ai AI Agent",
       systemMessage: "Please note: You can ask up to <strong>20 questions</strong> about KyoConnectAI",
-      initialMessage: "Hi! What can I help you with KyoConnectAI?",
+      initialMessage: "Hi! What can I help you with KyoX.ai?",
       inputPlaceholder: "Ask your question...",
-      footerHTML: `Powered by <a href="https://kyoconnectai.com/" target="_blank">KyoConnectAI.com</a> |
+      footerHTML: `Powered by <a href="https://kyox.ai/" target="_blank">KyoX.ai</a> |
                    AI can make mistakes.`
     },
     behavior: {
