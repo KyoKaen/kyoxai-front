@@ -633,7 +633,7 @@ class KyoconnectaiHPChatbot {
 }
 
 // Initialization
-const SERVICE_NAME="kyoconnectai-hp-chatbot-genai"
+const SERVICE_NAME="kyoxai-hp-chatbot-genai"
 const API_SUFFIX = "-1096582767898.europe-west1.run.app/chat";
 const apiUrl = `https://${SERVICE_NAME}${API_SUFFIX}`;
 
