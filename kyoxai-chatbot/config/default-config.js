@@ -2,7 +2,7 @@ export const defaultConfig = {
   BRAND: {
     NAME: 'kyox.ai',
     WEBSITE: 'https://kyox.ai/',
-    LOGO: 'https://kyox.ai/kyoxai-logo.jpg',
+    LOGO: 'https://kyox.ai/kyoxai_logo.jpg',
     PRIMARY_COLOR: '#000000',
     SECONDARY_COLOR: '#F0F4F8'
   },
