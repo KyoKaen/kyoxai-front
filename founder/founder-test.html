@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kyox.ai-agent</title>
+  <link rel="icon" href="https://kyox.ai/frontend/kyoxai_logo.jpg" type="image/jpeg"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ====== Site Header ====== -->
+   <header>
+        <a href="https://kyox.ai/" style="text-decoration: none; color: inherit; display: contents;">
+            <img src="https://kyox.ai/frontend/kyoxai_logo.jpg" alt="kyoxai" class="logo">
+            <h1>Hi there! I'm the AI agent of Kyo Kaen, founder of KyoX.ai.</h1>
+        </a>
+    </header>
+
+
+  <!-- ====== Chat Interface ====== -->
+  <main>
+    <section class="chat-container" aria-label="chat">
+      <!-- Chat Messages Area -->
+      <div id="messages" class="chat-messages" role="log" aria-live="polite">
+        <!-- Default AI message -->
+        <div class="message ai">
+       Ask me anything about the founder: Kyo Kaen
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <form id="chat-form" class="chat-input-area" aria-label="Input message">
+        <input
+          type="text"
+          id="user-input"
+          placeholder="Input…"
+          autocomplete="off"
+          aria-label="Input message"
+        />
+        <button type="submit" id="send-btn">send</button>
+      </form>
+      <p class="disclaimer">* AI can make mistakes</p>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+
+  <script>
+    window.CHATBOT_API = 'https://kyoconnectai-hp-chatbot-1096582767898.europe-west1.run.app/chat';
+  </script>
+  <script src="frontend/kyoxai-chatbot.js" defer></script>
+</body>
+</html>
