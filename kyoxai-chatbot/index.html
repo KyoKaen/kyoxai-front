@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kyox.ai Chatbot</title>
+</head>
+<body>
+    
+    <script type="module">
+        import KyoxAIChatbot from './kyoxai-chatbot.js';
+        
+        const SERVICE_NAME = "kyoconnectai-hp-chatbot-genai"; // Keeping original API service name
+        const API_SUFFIX = "-1096582767898.europe-west1.run.app/chat";
+        const apiUrl = `https://${SERVICE_NAME}${API_SUFFIX}`;
+
+        if (document.readyState === 'complete') {
+            new KyoxAIChatbot({ apiUrl });
+        } else {
+            window.addEventListener('DOMContentLoaded', () => new KyoxAIChatbot({ apiUrl }));
+        }
+    </script>
+</body>
+</html>
