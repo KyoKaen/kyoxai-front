@@ -1,4 +1,3 @@
-// kyoxai-chatbot.js - Complete single file version
 class KyoxAIChatbot {
   static config = {
     BRAND: {
