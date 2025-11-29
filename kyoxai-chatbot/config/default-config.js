@@ -2,12 +2,12 @@ export const defaultConfig = {
   BRAND: {
     NAME: 'kyox.ai',
     WEBSITE: 'https://kyox.ai/',
-    LOGO: 'https://kyox.ai/kyoxai_logo.jpg',
+    LOGO: 'https://kyox.ai/kyoxai-chatbot/kyoxai_logo.jpg',
     PRIMARY_COLOR: '#000000',
     SECONDARY_COLOR: '#F0F4F8'
   },
   USER_MESSAGE_BG: '#000000',
-  USER_ICON: 'https://kyox.ai/kyoxai-logo.jpg',
+  USER_ICON: 'https://kyox.ai/kyoxai-chatbot/kyoxai_logo.jpg',
   FREQUENT_QUESTIONS: [
     "What kyox.ai Does",
     "Founder Information",
