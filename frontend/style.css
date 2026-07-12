@@ -170,7 +170,7 @@ section {
     margin-bottom: 2.5rem;
 }
 
-/* Hero CTA Button (from kyoconnectai.com) */
+/* Hero CTA Button (from kyox.ai) */
 #hero button {
     background-color: var(--cta-bg);
     color: var(--cta-text);
@@ -254,7 +254,7 @@ section {
     margin-bottom: 15px;
 }
 
-/* --- Supported Models Section (Copied from kyoconnectai.com) --- */
+/* --- Supported Models Section (Copied from kyox.ai) --- */
 .section-split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -338,7 +338,7 @@ section {
     transform: translateY(-2px);
 }
 
-/* Part 2: Detailed Iframe Cases (from kyoconnectai.com) */
+/* Part 2: Detailed Iframe Cases (from kyox.ai) */
 .use-case-detailed {
     margin-top: 3rem;
     border: 1px solid var(--border-color);
@@ -393,7 +393,7 @@ section {
     /* Removed: color: var(--text-muted); -> now inherits black from body */
 }
 
-/* Form styling from kyoconnectai.com */
+/* Form styling from kyox.ai */
 .form-container {
     margin-top: 3rem;
 }

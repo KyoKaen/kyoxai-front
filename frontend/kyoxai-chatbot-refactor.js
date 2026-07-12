@@ -5,12 +5,12 @@ class KXaiHPChatbot {
     BRAND: {
       NAME: 'KyoX.ai',
       WEBSITE: 'https://kyox.ai/',
-      LOGO: 'https://kyoconnectai.com/kyoconnectai_logo.jpg',
+      LOGO: 'https://kyox.ai/assets/kyoconnectai_logo.jpg',
       PRIMARY_COLOR: '#000000',
       SECONDARY_COLOR: '#F0F4F8'
     },
     USER_MESSAGE_BG: '#000000',
-    USER_ICON: 'https://kyoconnectai.com/kyoconnectai_logo.jpg',
+    USER_ICON: 'https://kyox.ai/assets/kyoconnectai_logo.jpg',
     FREQUENT_QUESTIONS: [
       "What kyox.ai Does",
       "Founder Information",
