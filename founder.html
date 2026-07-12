@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Founder - kyox.ai</title>
+    <link rel="icon" href="https://kyox.ai/frontend/kyoxai_logo.jpg" type="image/jpeg"/>
+    <link rel="stylesheet" href="frontend/style.css">
+    <style>
+        /* Founder page specific styles */
+        .founder-hero {
+            padding: 80px 0 40px;
+            background-color: var(--bg-secondary);
+            text-align: center;
+        }
+        .founder-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .founder-hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+        .founder-content {
+            padding: 60px 0;
+        }
+        .founder-profile {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        .founder-sidebar {
+            position: sticky;
+            top: 150px;
+            align-self: start;
+        }
+        .founder-sidebar .profile-card {
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+        .founder-sidebar .profile-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .founder-sidebar .profile-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .founder-sidebar .contact-links {
+            list-style: none;
+            margin-top: 20px;
+            padding: 0;
+        }
+        .founder-sidebar .contact-links li {
+            margin-bottom: 10px;
+        }
+        .founder-sidebar .contact-links a {
+            font-size: 0.95rem;
+        }
+        .founder-main h2 {
+            text-align: left;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        .founder-main h2::after {
+            margin: 1rem 0 0;
+        }
+        .founder-main h3 {
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item {
+            border-left: 3px solid var(--cta-bg);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+        .experience-item .role {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .experience-item .company {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-item ul {
+            padding-left: 20px;
+        }
+        .experience-item li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .skill-chip {
+            background: var(--bg-secondary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .certs-list, .languages-list {
+            list-style: none;
+            padding: 0;
+        }
+        .certs-list li, .languages-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        @media (max-width: 768px) {
+            .founder-profile {
+                grid-template-columns: 1fr;
+            }
+            .founder-sidebar {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <a href="/" class="logo-container">
+            <img src="https://kyox.ai/frontend/kyoxai_logo.jpg" alt="kyox.ai Logo" class="logo">
+            <span class="logo-text">KyoX.ai</span>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/founder.html">About the Founder</a></li>
+                <li><a href="/#mission">Our Mission</a></li>
+                <li><a href="/#solutions">Solutions</a></li>
+                <li><a href="/#use-cases">Use Cases</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="founder-hero">
+            <div class="container">
+                <h1>Kyo Kaen</h1>
+                <p class="subtitle">Founder & CEO of KyoX.ai | Senior GenAI Consultant at KPMG Japan</p>
+            </div>
+        </section>
+
+        <section class="founder-content">
+            <div class="container">
+                <div class="founder-profile">
+
+                    <aside class="founder-sidebar">
+                        <div class="profile-card">
+                            <h3>Kyo Kaen</h3>
+                            <p>She/Her</p>
+                            <p>Tokyo, Japan</p>
+                            <ul class="contact-links">
+                                <li><a href="https://www.linkedin.com/in/kaenkyo/" target="_blank">LinkedIn</a></li>
+                                <li><a href="mailto:kaennkyou@gmail.com">Email</a></li>
+                                <li><a href="https://kyox.ai" target="_blank">kyox.ai</a></li>
+                                <li><a href="https://qiita.com/kyokaen" target="_blank">Tech Articles (Qiita)</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <div class="founder-main">
+                        <h2>About</h2>
+                        <p>Senior Consultant in GenAI and Emerging Technologies at KPMG Japan, with over 10 years of experience bridging technology (AI & Cloud), business strategy, and innovation across Japan and Europe.</p>
+                        <p>An entrepreneur from emlyon Business School MBA, I combine hands-on technical expertise with strategic consulting to help organizations transform through AI. I specialize in GenAI strategy, AI agent solutions, and cloud integration, delivering end-to-end initiatives — from ideation and PoC to large-scale deployment.</p>
+                        <p>As the founder of KyoX.ai, my AI startup born during the emlyon MBA, I've led projects that empower SMEs, schools, and cultural institutions to deploy conversational AI assistants that truly enhance customer experience and operational efficiency.</p>
+                        <p>Curious, adaptable, and purpose-driven, I aim to shape the next generation of trusted and impactful AI transformation where technology amplifies human potential.</p>
+
+                        <h2>Experience</h2>
+
+                        <div class="experience-item">
+                            <p class="role">Senior Consultant — GenAI & Emerging Technologies</p>
+                            <p class="company">KPMG Japan · Sep 2025 – Present · Tokyo, Japan</p>
+                            <ul>
+                                <li>Lead end-to-end GenAI consulting engagements — from market research, strategy design, and business problem assessment to solution ideation, prototyping, and PoC execution.</li>
+                                <li>Design and implement AI Agent and LLM-based solutions integrated with major cloud (Azure, AWS, Google Cloud) and AI ecosystems.</li>
+                                <li>Advise clients on trustworthy GenAI strategies, assess AI maturity, and define trusted AI scopes aligned with KPMG's Trusted AI Framework and Japan/EU AI governance standards.</li>
+                                <li>Collaborate with cross-functional teams to accelerate digital transformation initiatives.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <p class="role">Founder & CEO</p>
+                            <p class="company">KyoX.ai · Dec 2024 – Present · France</p>
+                            <ul>
+                                <li>Empowering small and medium businesses to leverage AI for seamless communication and customer engagement.</li>
+                                <li>Building unified AI chatbot solutions that integrate with websites, WhatsApp, and Messenger.</li>
+                                <li>Enabling businesses to provide accurate responses while gaining actionable insights from customer interactions.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <p class="role">Business Consultant</p>
+                            <p class="company">Tata Consultancy Services · Jul 2023 – Jul 2024 · Tokyo, Japan</p>
+                            <ul>
+                                <li>Led a diverse team of 30+ associates in an American Insurance Industry project.</li>
+                                <li>Assessed cloud infrastructure and developed future-state architecture and roadmaps for hybrid cloud.</li>
+                                <li>Delivered a data insight solution on AWS cloud through cross-team collaboration.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <p class="role">Cloud Solution Specialist</p>
+                            <p class="company">NetApp · Feb 2022 – Jun 2023 · Tokyo, Japan</p>
+                            <ul>
+                                <li>Hybrid & multi-cloud data migration solutions across financial, commercial, and public sectors.</li>
+                                <li>Demonstrated cloud solutions to 50+ stakeholders including C-suite executives.</li>
+                                <li>Published 27 cloud migration articles. Won NetApp S3 Academy MVP and best Cloud SE globally.</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <p class="role">Software Engineer</p>
+                            <p class="company">IBM · Apr 2018 – Jan 2022 · Tokyo, Japan</p>
+                            <ul>
+                                <li>Collaborated with US team on Watson backend development.</li>
+                                <li>Managed a team of 10+ members, delivering significant product releases on tight timelines.</li>
+                                <li>Worked on Watson Discovery and Watson Explorer with Docker, Kubernetes, Java, Linux, Hadoop, and Elasticsearch.</li>
+                                <li>Won Watson Discovery External Recognition in 2020.</li>
+                            </ul>
+                        </div>
+
+                        <h2>Certifications</h2>
+                        <ul class="certs-list">
+                            <li>Cloud FinOps Practitioner</li>
+                            <li>AWS Solutions Architect: Associate & Professional</li>
+                            <li>Azure Fundamentals</li>
+                            <li>NetApp Storage Technology</li>
+                        </ul>
+
+                        <h2>Languages</h2>
+                        <ul class="languages-list">
+                            <li><strong>English</strong> — Working proficiency</li>
+                            <li><strong>Japanese / Chinese</strong> — Bilingual</li>
+                            <li><strong>French</strong> — DELF B2</li>
+                        </ul>
+
+                        <h2>Core Skills</h2>
+                        <div class="skills-grid">
+                            <span class="skill-chip">GenAI & LLMs</span>
+                            <span class="skill-chip">AI Agents</span>
+                            <span class="skill-chip">Cloud Architecture</span>
+                            <span class="skill-chip">AWS / Azure / GCP</span>
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">Docker & Kubernetes</span>
+                            <span class="skill-chip">Business Strategy</span>
+                            <span class="skill-chip">Consulting</span>
+                            <span class="skill-chip">NLP / RAG</span>
+                            <span class="skill-chip">Responsible AI</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 kyox.ai. All Rights Reserved.</p>
+    </footer>
+
+    <script src="frontend/script.js" defer></script>
+    <script src="frontend/kyoxai-chatbot.js" defer></script>
+
+</body>
+</html>
